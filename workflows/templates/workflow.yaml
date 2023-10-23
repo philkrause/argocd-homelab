@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: WorkflowTemplate
+metadata:
+  name: deploy-dev
+spec:
+  entrypoint: deploy
+  templates:
+  - name: deploy
+    steps:
+    - - name: deploy-dev
+        template: deploy-app
+        arguments:
+          parameters:
+          - name: environment
+            value: dev
+  # Add more steps for Dev environment
+---
+apiVersion: argoproj.io/v1alpha1
+kind: WorkflowTemplate
+metadata:
+  name: deploy-prod
+spec:
+  entrypoint: deploy
+  templates:
+  - name: deploy
+    steps:
+    - - name: deploy-prod
+        template: deploy-app
+        arguments:
+          parameters:
+          - name: environment
+            value: prod
+  # Add more steps for Prod environment
