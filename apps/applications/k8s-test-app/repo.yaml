@@ -1,9 +1,0 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Repository
-metadata:
-  name: app-yaml-repo
-spec:
-  # URL of the Git repository containing the application YAML files
-  repo: https://github.com/philkrause/argocd-homelab.git
-  # Path within the Git repository where the application YAML files are located
-  path: apps/applications/k8s-test-app/app.yaml
