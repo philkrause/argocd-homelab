@@ -7,7 +7,7 @@ spec:
     server: https://kubernetes.default.svc
     namespace: argocd
   source:
-    repoURL: https://github.com/philkrause/argocd-homelab.git
-    path: apps/applications/k8s-test-app
+    repoURL: https://github.com/philkrause/k8s-test-app.git
+    path: ./
     targetRevision: HEAD
   project: default
