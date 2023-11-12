@@ -1,8 +1,8 @@
 default:
-  path: "clusters/deathstar-dev/apps"
+  path: "clusters/dev/apps"
 
 additionalApplications:
-  - namespace: hello-world-dev
-    path: "hello/"
+  - namespace: applications
+    path: "clusters/dev/apps"
     charts:
       - name: hello-world
