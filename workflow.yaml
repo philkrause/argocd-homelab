@@ -18,16 +18,16 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: WorkflowTemplate
 metadata:
-  name: deploy-prod
+  name: deploy-live
 spec:
   entrypoint: deploy
   templates:
   - name: deploy
     steps:
-    - - name: deploy-prod
+    - - name: deploy-live
         template: deploy-app
         arguments:
           parameters:
           - name: environment
-            value: prod
+            value: live
   # Add more steps for Prod environment

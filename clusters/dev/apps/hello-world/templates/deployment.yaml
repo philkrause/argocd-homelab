@@ -20,11 +20,3 @@ spec:
         image: crccheck/hello-world:latest
         # image: crccheck/invalid:latest
         imagePullPolicy: IfNotPresent
-        volumeMounts:
-          - name: secret-volume
-            readOnly: true
-            mountPath: "/run/secrets"
-      volumes:
-        - name: secret-volume
-          secret:
-            secretName: hello-world
