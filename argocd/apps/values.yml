@@ -25,7 +25,5 @@ default:
       skipValidate: false
       applyOutOfSyncOnly: false
 
-# Any additional applications
-additionalApplications: []
 
 applications: []

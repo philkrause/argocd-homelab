@@ -1,4 +1,4 @@
-{{- range $namespace, $nVal := concat .Values.applications .Values.additionalApplications }}
+{{- range $namespace, $nVal := .Values.applications }}
 {{- range $name, $val := $nVal.charts }}
 ---
 apiVersion: argoproj.io/v1alpha1
