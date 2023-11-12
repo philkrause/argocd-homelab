@@ -1,5 +1,5 @@
 default:
-  path: "clusters/devops/apps"
+  path: "clusters/deathstar-dev/apps"
 
 additionalApplications:
   - namespace: hello-world-dev
