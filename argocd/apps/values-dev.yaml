@@ -2,6 +2,6 @@ default:
   path: "clusters/dev/apps"
 applications:
   - namespace: applications
-    path: "clusters/dev/apps/hello-world"
+    path: "clusters/dev/apps"
     charts:
       - name: hello-world
