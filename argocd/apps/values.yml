@@ -1,5 +1,5 @@
 default:
-  path: "cluster/deathstar"
+  path: "clusters/dev/apps"
   app:
     destination:
       server: "https://kubernetes.default.svc"
