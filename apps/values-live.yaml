@@ -1,6 +1,5 @@
 default:
-  path: "clusters/live/apps"
-
+  path: "clusters/live/apps/"
 applications:
   - namespace: applications
     path: "clusters/live/apps/hello-world"

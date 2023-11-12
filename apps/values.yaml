@@ -1,5 +1,5 @@
 default:
-  path: "clusters/dev/apps"
+  path: "clusters/<env>/apps"
   app:
     destination:
       server: "https://kubernetes.default.svc"
