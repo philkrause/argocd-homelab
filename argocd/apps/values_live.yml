@@ -1,0 +1,8 @@
+default:
+  path: "clusters/live/apps"
+
+additionalApplications:
+  - namespace: hello-world-live
+    path: "hello/"
+    charts:
+      - name: hello-world

@@ -1,0 +1,8 @@
+default:
+  path: "clusters/devops/apps"
+
+additionalApplications:
+  - namespace: hello-world-dev
+    path: "hello/"
+    charts:
+      - name: hello-world
