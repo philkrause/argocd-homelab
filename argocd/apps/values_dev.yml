@@ -3,6 +3,6 @@ default:
 
 additionalApplications:
   - namespace: applications
-    path: "clusters/dev/apps"
+    path: "clusters/dev/apps/hello-world"
     charts:
       - name: hello-world
