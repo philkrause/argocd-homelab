@@ -2,10 +2,10 @@ default:
   path: "clusters/dev/apps"
 applications:
   - namespace: applications
-    path: "clusters/dev/apps"
+    path: "clusters/dev/apps/"
     charts:
       - name: hello-world
   - namespace: valheim
-    path: "clusters/dev/apps"
+    path: "clusters/dev/apps/"
     charts:
       - name: valheim
