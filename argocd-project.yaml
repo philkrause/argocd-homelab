@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: my-argocd-project
+  name: deathstar-argocd-project
 spec:
   destinations:
     - server: https://192.168.10.101:6443
