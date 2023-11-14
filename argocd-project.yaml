@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: my-argocd-project
+spec:
+  destinations:
+    - server: https://192.168.10.101:6443
+      namespace: default
+    - server: https://192.168.10.201:6443
+      namespace: default
+  sourceRepos:
+    - 'https://github.com/philkrause/argocd-homelab'
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
