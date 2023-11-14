@@ -1,0 +1,7 @@
+# Values file for the Helm template
+appName: hello-world
+projectName: deathstar-argocd-project
+targetRevision: main
+chartName: hello-world
+environments:
+  - dev
