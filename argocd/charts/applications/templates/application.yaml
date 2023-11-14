@@ -2,17 +2,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ .Values.appName }}-{{ $env }}  # Name based on environment
-  # ... Other metadata as needed
+  name: {{ .Values.appName }}-{{ $env }} 
 spec:
-  project: {{ .Values.projectName }}
+  project: deathstar-argocd-project 
+
   source:
     repoURL: https://github.com/philkrause/my-argocd-repo
     targetRevision: {{ .Values.targetRevision }}
     path: apps/charts/{{ .Values.chartName }}t
     helm:
       valueFiles:
-        - app/charts/{{ .Values.chartName }}/values.-{{ $env }}.yaml  # Path to environment-specific values file
+        - app/charts/{{ .Values.chartName }}/values.yaml
   destination:
     namespace: applications
     server: "https://kubernetes.default.svc"
+{{- end }}
+
