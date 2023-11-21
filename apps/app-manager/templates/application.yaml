@@ -1,9 +1,9 @@
 {{- range .Values.applications }}
-{{- range .Values.applications.environments }}
+{{- range .environments }}
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ .appName }}-{{ $env }} 
+  name: {{ .appName }}-{{ .Values.applications.environment }} }} 
 spec:
   project: deathstar-argocd-project 
   source:
