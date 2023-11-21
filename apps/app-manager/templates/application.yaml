@@ -1,5 +1,5 @@
 {{- range .Values.applications }}
-{{- range .environments }}
+{{- range .Values.applications.environments }}
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
