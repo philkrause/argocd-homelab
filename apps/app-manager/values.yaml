@@ -1,0 +1,7 @@
+applications:
+  - appName: hello-world
+    namespace: applications
+    targetRevision: dev
+    chartName: hello-world
+    environments:
+      - dev

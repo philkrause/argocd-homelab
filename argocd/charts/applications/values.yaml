@@ -1,6 +1,0 @@
-# Values file for the Helm template
-appName: hello-world
-targetRevision: main
-chartName: hello-world
-environments:
-  - dev
