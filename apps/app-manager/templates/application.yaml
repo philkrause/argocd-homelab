@@ -1,20 +1,24 @@
 {{- range .Values.applications }}
-{{- range .environments }}
+{{- $appName := .appName }}
+{{- $namespace := .namespace }}
+{{- $targetRevision := .targetRevision }}
+{{- $chartName := .chartName }}
+{{- $range .environments }}
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ .appName }}-{{ .Values.applications.environment }} }} 
+  name: {{ $appName }}-{{ . }}
 spec:
   project: deathstar-argocd-project 
   source:
     repoURL: https://github.com/philkrause/helm-charts.git
-    targetRevision: {{ .branch}}
-    path: {{ .chartName }}
+    targetRevision: {{ $targetRevision }}
+    path: {{ $chartName }}
     helm:
       valueFiles:
-        - {{ .chartName }}/values-{{ $env }}.yaml
+        - {{ $chartName }}/values-{{ . }}.yaml
   destination:
-    namespace: {{ .Values.namespace }}
+    namespace: {{ $namespace }}
     server: "https://kubernetes.default.svc"
 {{- end }}
 {{- end }}
