@@ -3,11 +3,10 @@
 {{- $namespace := .namespace }}
 {{- $targetRevision := .targetRevision }}
 {{- $chartName := .chartName }}
-{{- $range .environments }}
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ $appName }}-{{ . }}
+  name: {{ $appName }}
 spec:
   project: deathstar-argocd-project 
   source:
@@ -20,5 +19,4 @@ spec:
   destination:
     namespace: {{ $namespace }}
     server: "https://kubernetes.default.svc"
-{{- end }}
 {{- end }}
