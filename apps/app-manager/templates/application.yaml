@@ -5,6 +5,9 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: {{ $app.appName }}-{{ . }}
+  namespace: {{ $app.namespace }}}
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
 spec:
   project: default 
   source:
