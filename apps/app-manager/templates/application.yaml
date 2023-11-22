@@ -15,7 +15,7 @@ spec:
       valueFiles:
         - values-{{ . }}.yaml
   destination:
-    namespace: $app.namespace
+    namespace: {{ $app.namespace }}
     server: "https://kubernetes.default.svc"
 {{- end }}
 {{- end }}
