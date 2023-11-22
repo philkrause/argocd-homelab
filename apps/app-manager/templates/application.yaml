@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/philkrause/helm-charts.git
     targetRevision: {{ . }}
-    path: ./{{ $app.appName }}
+    path: {{ $app.appName }}
     helm:
       valueFiles:
         - ./values-{{ . }}.yaml
