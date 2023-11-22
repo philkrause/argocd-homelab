@@ -1,5 +1,5 @@
 {{- range $appIndex, $app := .Values.applications }}
-{{- range $envIndex, $env := $app.environments }}
+{{- range $envIndex, $env := .environments }}
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
