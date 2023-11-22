@@ -17,7 +17,7 @@ spec:
     path: {{ $app.appName }}
     helm:
       valueFiles:
-        - hello-world/values-{{ . }}.yaml
+        - {{ $app.appName }}/values-{{ . }}.yaml
   destination:
     namespace: {{ $app.namespace }}
     server: "https://kubernetes.default.svc"
