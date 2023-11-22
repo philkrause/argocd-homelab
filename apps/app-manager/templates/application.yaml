@@ -17,7 +17,8 @@ spec:
     namespace: {{ $app.namespace }}
     server: "https://kubernetes.default.svc"
   syncPolicy: 
-    automated: enabled
-    selfheal: enabled
+    automated: enable
+    prune: enable
+    selfheal: enable
 {{- end }}
 {{- end }}
