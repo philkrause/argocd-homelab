@@ -1,5 +1,6 @@
 applications:
   - appName: hello-world
+    namespace: applications
     environments:
       - dev
       - live
