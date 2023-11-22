@@ -3,18 +3,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ .appName }}-{{ . }}
+  name: {{ $app.appName }}-{{ . }}
 spec:
   project: default 
   source:
     repoURL: https://github.com/philkrause/helm-charts.git
     targetRevision: {{ . }}
-    path: {{ .chartName }}
+    path: {{ $app.appName }}
     helm:
       valueFiles:
-        - {{ .chartName }}/values-{{ . }}.yaml
+        - {{ $app.appName }}/values-{{ . }}.yaml
   destination:
-    namespace: {{ .namespace }}
+    namespace: applications
     server: "https://kubernetes.default.svc"
 {{- end }}
 {{- end }}

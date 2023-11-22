@@ -1,7 +1,5 @@
 applications:
   - appName: hello-world
-    namespace: applications
-    chartName: hello-world
     environments:
       - dev
       - live
