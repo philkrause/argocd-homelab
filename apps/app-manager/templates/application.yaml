@@ -7,12 +7,12 @@ spec:
   project: default 
   source:
     repoURL: https://github.com/philkrause/helm-charts.git
-    targetRevision: {{ $app.targetRevision }}
-    path: {{ $app.chartName }}
+    targetRevision: {{ .targetRevision }}
+    path: {{ .chartName }}
     helm:
       valueFiles:
-        - {{ $app.chartName }}/values-dev.yaml
+        - {{ .chartName }}/values-dev.yaml
   destination:
-    namespace: {{ $app.namespace }}
+    namespace: {{ .namespace }}
     server: "https://kubernetes.default.svc"
 {{- end }}
