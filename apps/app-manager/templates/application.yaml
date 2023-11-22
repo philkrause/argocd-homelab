@@ -8,10 +8,10 @@ metadata:
 spec:
   project: default 
   source:
-    repoURL: https://github.com/philkrause/helm-charts.git
+    repoURL: https://github.com/philkrause/argocd-homelab.git
     targetRevision: {{ . }}
     chart: {{ $app.appName }}
-    path: {{ $app.appName }}
+    path: charts/{{ $app.appName }}
     helm:
       valueFiles:
         - hello-world/values-{{ . }}.yaml
