@@ -1,20 +1,20 @@
-{{- range $apps, $app := .Values.applications }}
-{{- range $environments, $env := .environments }}
+{{- range $appIndex, $app := .Values.applications }}
+{{- range $envIndex, $env := $app.environments }}
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ .appName }}
+  name: {{ $app.appName }}-{{ $env }}
 spec:
   project: default 
   source:
     repoURL: https://github.com/philkrause/helm-charts.git
-    targetRevision: {{ .environments }}
-    path: {{ .chartName }}
+    targetRevision: {{ $env }}
+    path: {{ $app.chartName }}
     helm:
       valueFiles:
-        - {{ .chartName }}/values-{{environments}}.yaml
+        - {{ $app.chartName }}/values-{{ $env }}.yaml
   destination:
-    namespace: {{ .namespace }}
+    namespace: {{ $app.namespace }}
     server: "https://kubernetes.default.svc"
 {{- end }}
 {{- end }}
