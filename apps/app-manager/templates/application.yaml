@@ -21,11 +21,5 @@ spec:
       automated:
         prune: true
         selfHeal: true
-      retry:
-        limit: 1
-        backoff:
-          duration: 5s
-          factor: 2
-          maxDuration: 1m0s
 {{- end }}
 {{- end }}
