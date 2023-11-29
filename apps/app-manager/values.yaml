@@ -3,4 +3,3 @@ applications:
     namespace: applications
     environments:
       - dev
-      - live
