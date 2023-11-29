@@ -4,7 +4,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ $app.appName }}-{{ . }}
+  name: {{ $app.appName }}-{{ $env }}
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -12,11 +12,11 @@ spec:
   project: default 
   source:
     repoURL: https://github.com/philkrause/helm-charts.git
-    targetRevision: {{ . }}
+    targetRevision: {{ $env }}
     path: {{ $app.appName }}
     helm:
       valueFiles:
-        - values-{{ . }}.yaml
+        - values-{{ $env }}.yaml
   destination:
     namespace: {{ $app.namespace }}
     server: "https://kubernetes.default.svc"
