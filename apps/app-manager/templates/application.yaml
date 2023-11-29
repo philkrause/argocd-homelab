@@ -5,7 +5,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: {{ $app.appName }}-{{ . }}
-  namespace: {{ $app.namespace }}}
+  namespace: {{ $app.namespace }}
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
@@ -13,7 +13,6 @@ spec:
   source:
     repoURL: https://github.com/philkrause/helm-charts.git
     targetRevision: {{ . }}
-    chart: {{ $app.appName }}
     path: {{ $app.appName }}
     helm:
       valueFiles:
