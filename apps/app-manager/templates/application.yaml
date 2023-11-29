@@ -1,4 +1,4 @@
-{{- range $apps, $app := .Values.applications }}
+{{- range $app := .Values.applications }}
 {{- range $env := $app.environments }}
 ---
 apiVersion: argoproj.io/v1alpha1
